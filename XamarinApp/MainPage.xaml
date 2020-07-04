@@ -6,11 +6,23 @@
              mc:Ignorable="d"
              x:Class="XamarinApp.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Vladimir the greatest" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+
+        <ListView x:Name="GirlsView"
+            ItemsSource="{Binding Girls}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout>
+                            <Label Text="{Binding Nickname}" TextColor="Black" />
+                            <Label Text="{Binding Age}" TextColor="Black" />
+                            <Label Text="{Binding EyeColor}" TextColor="Black" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+  
 
 </ContentPage>
